@@ -158,6 +158,17 @@ if (galleryTrack) {
     sectionObserver.observe(section);
   });
 
+  const backToTopLink = document.querySelector('.site-footer a[href="#top"]');
+
+  backToTopLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
 }
 
 setSlide(0);
