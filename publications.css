@@ -1,9 +1,11 @@
 .publication-hero {
-  min-height: calc(100vh - 82px);
+  min-height: auto;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.65fr);
   align-items: center;
   gap: 42px;
+  padding-top: 46px;
+  padding-bottom: 32px;
 }
 
 .publication-hero h1 {
