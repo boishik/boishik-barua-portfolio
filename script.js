@@ -147,4 +147,28 @@
 
     revealItems.forEach((item) => observer.observe(item));
   }
+
+
+  const customCursor = document.querySelector('.custom-cursor');
+
+  if (customCursor && window.matchMedia('(pointer: fine)').matches) {
+    document.addEventListener('mousemove', (event) => {
+      customCursor.style.left = `${event.clientX}px`;
+      customCursor.style.top = `${event.clientY}px`;
+    });
+
+    const interactiveElements = document.querySelectorAll(
+      'a, button, input, select, textarea, .project-card'
+    );
+
+    interactiveElements.forEach((element) => {
+      element.addEventListener('mouseenter', () => {
+        customCursor.classList.add('is-hovering');
+      });
+
+      element.addEventListener('mouseleave', () => {
+        customCursor.classList.remove('is-hovering');
+      });
+    });
+  }
 })();

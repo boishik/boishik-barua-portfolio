@@ -1409,3 +1409,43 @@ img {
     transition: none;
   }
 }
+
+
+/* Custom round cursor */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #2f3a35;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.18s ease,
+      height 0.18s ease,
+      background 0.18s ease,
+      border-color 0.18s ease;
+  }
+
+  .custom-cursor.is-hovering {
+    width: 34px;
+    height: 34px;
+    background: rgba(47, 58, 53, 0.08);
+  }
+}
